@@ -1,5 +1,5 @@
 # start with a base image
-FROM ubuntu:13.10
+FROM ubuntu:14.04
 MAINTAINER Real Python <info@realpython.com>
 
 # install dependencies

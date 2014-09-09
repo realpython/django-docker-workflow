@@ -74,37 +74,28 @@ EXPOSE 8000
 CMD python manage.py runserver 0.0.0.0:8000
 ```
 
-### Django Setup
+### Django Project
 
 Clone the repo to get started quickly. Alternatively, use your own Django Project. Just be sure to re-organize the project to match mine and add the *fig.yml* file. If you don't have any tests, be sure to add a few.
 
-### Signup for Docker Hub
+PUSH this up to Github.
 
-Already have an account? Skip this section.
+> Want to test it locally? Simply run `fig up`, then navigate to [http://localdocker:8000/](http://localdocker:8000/). You should see "Hello, World!"
 
-1. Signup [here](https://hub.docker.com/account/signup/).
-1. Enter the docker-osx shell: `docker-osx shell`
-2. Login: `docker login`
+### Docker Hub Setup
 
-### Create your Image
+1. Signup [here](https://hub.docker.com/account/signup/), if you don't already have an account.
+1. Create an *Automated Build* from the code your just PUSHed to Github. Make sure to uncheck the *When active we will build when new pushes occur* box.
+1. Now we need to create a trigger so that Docker Hub know when to create the builds. Navigate to the newly created repository and then click *Build Triggers*. Turn the trigger status to on and copy the Trigger URL.
 
-1. Build it:
+https://registry.hub.docker.com/u/mjhea0/django-docker-workflow/trigger/8b212b14-3797-11e4-a515-464291d9ac34/
 
-```sh
-$ docker build -t web .
-```
+### Jenkins Setup
 
-2. Tag it:
+1. Navigate to the jenkins directory and then create a new image: `docker build -t jenkins-docker`.
+1. Now run the image `docker run -p 8080:8080 --privileged jenkins-docker`. By using the `--privileged` flag, Docker actually runs itself within the container. Pretty cool.
+1. Launch Jenkins. Install the Github Plugin.
 
-```sh
-docker tag web <your_docker_login>/web
-```
-
-3. Push it:
-
-```sh
-$ docker push <your_docker_login>/web
-```
 
 ## Deployment Workflow
 
@@ -118,7 +109,14 @@ $ docker push <your_docker_login>/web
 
 ## Code Locally
 
-In the normal flow, you would ideally be a point where you're ready to deploy code to production. Perhaps you fixed a major bug or implemented a new feature. Create a commit and PUSH
+In the normal flow, you would ideally be a point where you're ready to deploy code to production. Perhaps you fixed a major bug or implemented a new feature. Let's start with a pre-build Project. Clone the repo. Alternatively, use your own Django Project. Just be sure to re-organize the project to match mine and add the *fig.yml* file. If you don't have any tests, be sure to add a few.
+
+Commit your changes.
+
+## PUSH to Github
+
+PUSH your changes to Github.
+
 
 ## Resources
 
