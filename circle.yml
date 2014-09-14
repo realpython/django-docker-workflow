@@ -16,4 +16,4 @@ deployment:
   hub:
     branch: master
     commands:
-      - docker push django-docker-workflow
+      - docker push mjhea0/django-docker-workflow
