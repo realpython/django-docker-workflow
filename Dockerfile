@@ -16,6 +16,7 @@ WORKDIR /src
 RUN pip install -r requirements.txt
 RUN python manage.py makemigrations --noinput
 RUN python manage.py migrate --noinput
+RUN python manage.py test --noinput
 
 # expose port 8000 for us to use
 EXPOSE 8000
