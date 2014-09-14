@@ -1,14 +1,14 @@
 """
-WSGI config for fig_project project.
+WSGI config for django_polls_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
+https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 """
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "fig_project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_polls_project.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()

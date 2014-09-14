@@ -5,6 +5,6 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', 'fig_app.views.home', name='home'),
+    url(r'^', include('django_polls.urls', namespace="polls")),
     url(r'^admin/', include(admin.site.urls)),
 )

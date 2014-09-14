@@ -1,3 +1,7 @@
 *.pyc
 readme.md
 fig.md
+jenkins
+venv
+*.DS_Store
+db.sqlite3
