@@ -17,5 +17,5 @@ deployment:
   hub:
     branch: master
     commands:
-      - sed "s/$DOCKER_EMAIL/;s/$DOCKER_AUTH/" < .dockercfg.template > ~/.dockercfg
+      - sed "s/<EMAIL>/$DOCKER_EMAIL/;s/<AUTH>/$DOCKER_AUTH/" < .dockercfg.template > ~/.dockercfg
       - docker push mjhea0/django-docker-workflow
