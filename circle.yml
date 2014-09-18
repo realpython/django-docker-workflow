@@ -13,8 +13,8 @@ test:
     - docker run -d -p 8000:8000 mjhea0/django-docker-workflow; sleep 10
     - curl --retry 10 --retry-delay 5 -v http://localhost:8000
 
-# deployment:
-#   hub:
-#     branch: master
-#     commands:
-#       - $CURL
+deployment:
+  hub:
+    branch: master
+    commands:
+      - $CURL
